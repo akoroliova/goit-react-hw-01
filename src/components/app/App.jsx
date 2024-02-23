@@ -1,6 +1,10 @@
-import './App.css';
-import Profile from '../profile/Profile';
+import './App.module.css';
+import Profile from '../profile/Profile.jsx';
 import { userData } from '../../userData.json';
+import FriendList from '../friendlist/FriendList.jsx';
+import { friends } from '../../friends.json';
+import TransactionHistory from '../transactionhistory/TransactionHistory.jsx';
+import { transactions } from '../../transactions.json';
 
 function App() {
   return (
@@ -12,6 +16,8 @@ function App() {
         image={userData.avatar}
         stats={userData.stats}
       />
+      <FriendList friends={friends} />
+      <TransactionHistory items={transactions} />
     </>
   );
 }
