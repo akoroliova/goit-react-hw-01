@@ -1,4 +1,4 @@
-const TransactionHistory = items => {
+const TransactionHistory = ({ id, type, amount, currency }) => {
   return (
     <table>
       <thead>
@@ -12,10 +12,9 @@ const TransactionHistory = items => {
       <tbody>
         {/* Кількість tr залежить від кількості об'єктів в масиві items */}
         <tr>
-          {/* ??Кількість td залежить від ключів об'єктів в масиві items */}
-          <td>Invoice</td>
-          <td>125</td>
-          <td>USD</td>
+          <td>{type}</td>
+          <td>{amount}</td>
+          <td>{currency}</td>
         </tr>
       </tbody>
     </table>

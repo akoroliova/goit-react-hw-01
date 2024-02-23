@@ -16,6 +16,7 @@ function App() {
         image={userData.avatar}
         stats={userData.stats}
       />
+      {/* Щоб компонент працював правильно, переконайтеся, що ви передаєте масив об'єктів друзів у вигляді параметру friends. Також переконайтеся, що об'єкти друзів у масиві мають властивості, які очікує ваш компонент FriendList, наприклад, id, avatar, name, isOnline. */}
       <FriendList friends={friends} />
       <TransactionHistory items={transactions} />
     </>

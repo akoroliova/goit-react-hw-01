@@ -1,13 +1,20 @@
 import FriendListItem from './FriendListItem';
 
-const FriendList = friends => {
+const FriendList = ({ friends }) => {
   return (
     <div>
       <ul>
-        {/* Кількість li залежить від кількості об'єктів в масиві */}
-        <li>
-          <FriendListItem />
-        </li>
+        {friends.map(friend => {
+          return (
+            <li key={friend.id}>
+              <FriendListItem
+                avatar={friend.avatar}
+                name={friend.name}
+                isOnline={friend.isOnline}
+              />
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
