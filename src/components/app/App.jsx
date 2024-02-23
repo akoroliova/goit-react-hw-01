@@ -1,5 +1,5 @@
 import './App.css';
-import { Profile } from '../profile/Profile';
+import Profile from '../profile/Profile';
 import { userData } from '../../userData.json';
 
 function App() {
