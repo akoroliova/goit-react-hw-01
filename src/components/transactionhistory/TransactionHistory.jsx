@@ -1,21 +1,26 @@
-const TransactionHistory = ({ id, type, amount, currency }) => {
+import css from './TransactionHistory.module.css';
+
+const TransactionHistory = ({ items }) => {
   return (
-    <table>
+    <table className={css.transactionHistoryTable}>
       <thead>
-        <tr>
-          <th>Type</th>
-          <th>Amount</th>
-          <th>Currency</th>
+        <tr className={css.headerRow}>
+          <th className={css.headerCell}>Type</th>
+          <th className={css.headerCell}>Amount</th>
+          <th className={css.headerCell}>Currency</th>
         </tr>
       </thead>
 
       <tbody>
-        {/* Кількість tr залежить від кількості об'єктів в масиві items */}
-        <tr>
-          <td>{type}</td>
-          <td>{amount}</td>
-          <td>{currency}</td>
-        </tr>
+        {items.map(eachItem => {
+          return (
+            <tr className={css.row} key={eachItem.id}>
+              <td className={css.dataCell}>{eachItem.type}</td>
+              <td className={css.dataCell}>{eachItem.amount}</td>
+              <td className={css.dataCell}>{eachItem.currency}</td>
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );
