@@ -1,4 +1,5 @@
 import css from './Profile.module.css';
+import PropTypes from 'prop-types';
 
 const Profile = ({ name, tag, location, image, stats }) => {
   return (
@@ -28,6 +29,14 @@ const Profile = ({ name, tag, location, image, stats }) => {
       </ul>
     </div>
   );
+};
+
+Profile.propTypes = {
+  name: PropTypes.string,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string,
+  image: PropTypes.string,
+  stats: PropTypes.object,
 };
 
 export default Profile;
